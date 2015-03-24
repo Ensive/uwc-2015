@@ -1,0 +1,54 @@
+.novelty-section
+  background-color: #E9E9E9
+  @include container()
+  padding-bottom: 232px
+  @include cf()
+  .novelty-section__title
+    color: #222
+    font-size: 48px
+    text-transform: uppercase
+    font-family: $pf-ultra-black
+    margin: 147px 0 102px 0
+
+  // item block
+  .novelty-section__item
+    //width: 515px
+    width: 50%
+    float: left
+    opacity: 0
+    -webkit-transition: -webkit-transform .4s linear, opacity .4s linear
+    -moz-transition: -moz-transform .4s linear, opacity .4s linear
+    -ms-transition: -ms-transform .4s linear, opacity .4s linear
+    -o-transition: -o-transform .4s linear, opacity .4s linear
+    transition: transform .4s linear, opacity .4s linear
+    @include transform(translate(50px, 100px))
+    @for $i from 1 through 5
+      &:nth-of-type(#{$i})
+        @include transition-delay($i * .15s)
+    &.online,
+    &.development
+      margin: 0 0 76px 0
+    &.online,
+    &.afterparty
+      padding: 0 110px 0 0
+    &.development,
+    &.unique
+      padding: 0 55px 0 0
+    &.show-up
+      opacity: 1
+      @include transform(translate(0, 0))
+    .novelty-section__item__img
+      float: left
+      margin: 0 25px 0 0
+    .novelty-section__item__content
+      display: table-cell
+
+    .novelty-section__item__title
+      margin: 0 0 10px 0
+      font-family: $pf-bold
+      font-size: 14px
+      text-transform: uppercase
+      color: #444
+    .novelty-section__item__text
+      line-height: 20px
+      font-family: $pf-light

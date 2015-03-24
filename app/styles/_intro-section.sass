@@ -1,0 +1,46 @@
+.intro-section
+  background: #f8de2e url('../images/intro-background.jpg') 0 0 no-repeat
+  width: 100%
+  height: 768px
+  @include container()
+  @include cf()
+
+  .intro-section__title
+    height: 400px
+    margin: 101px 0 54px 0
+    font-family: $pf-ultra-black
+    font-size: 130px
+    line-height: 100px
+    text-transform: uppercase
+    color: #111
+
+    .thin-text
+      font-family: $pf-extra-thin
+    .block-word
+      display: block
+    .second-part-word
+      letter-spacing: 3.5px
+
+    // @todo: refactor
+    .last-line
+      width: 185px
+      float: left
+    .last-letter
+      margin: 0 0 0 18px
+
+    .intro-section__title__date
+      margin: 0 0 0 16px
+      font-family: $pf-extra-thin
+      font-size: 40px
+      text-transform: lowercase
+      color: #222
+
+  .intro-section__quote
+    font-family: $pf-light
+    display: block
+    margin: 65px 0 0 0
+    font-size: 14px
+    color: #7B6C03
+
+
+

@@ -1,0 +1,54 @@
+// bower:sass
+// endbower
+
+@import 'mixins'
+@import 'reset'
+@import 'helper'
+@import 'fonts'
+
+// @todo: implement fallbacks for ie6-7
+*
+  @include box-sizing
+
+html
+  font-size: 16px
+
+body
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
+  color: #333
+
+img
+  max-width: 100%
+
+//.browserupgrade
+  margin: 0.2em 0
+  background: #ccc
+  color: #000
+  padding: 0.2em 0
+
+.wrapper
+  position: relative
+  max-width: 1366px
+  margin: 0 auto
+
+// buy ticket button styles
+.buy-ticket-btn
+  display: block
+  font-family: $pf-ultra-black
+  background: none
+  border: 6px solid #111
+  text-transform: uppercase
+  font-size: 16px
+  @include cf()
+  &.buy-ticket-btn--intro
+    width: 474px
+    height: 70px
+    color: #111
+
+@import 'intro-section'
+@import 'menu'
+@import 'navigation'
+@import 'novelty-section'
+
+@import 'responsive/media_991'
+@import 'responsive/media_768'
