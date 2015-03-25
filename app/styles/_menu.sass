@@ -1,11 +1,19 @@
-.menu-block
+#menu-block-container
   position: absolute
   top: 0
   right: 114px
-  width: 322px
-  height: 64px
+  &, .menu-block
+    width: 322px
+    height: 64px
+  &.hide .menu-block
+    display: none
+  &.fixed .menu-block
+    position: fixed
+    display: block
+    background-color: #222
+
+.menu-block
   padding: 10px 16px 0 0
-  //background-color: #222
   background-color: transparent
 
 // language

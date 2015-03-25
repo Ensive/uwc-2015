@@ -33,22 +33,41 @@ img
 
 // buy ticket button styles
 .buy-ticket-btn
-  display: block
   font-family: $pf-ultra-black
   background: none
   border: 6px solid #111
   text-transform: uppercase
   font-size: 16px
   @include cf()
+  &:hover
+    cursor: pointer
   &.buy-ticket-btn--intro
     width: 474px
     height: 70px
     color: #111
+  &.buy-ticket-btn--menu
+    width: 171px
+    float: right
+    height: 39px
+    margin: 0 24px 0 0
+    border: 4px solid #fff
+    font-family: $pf-black
+    font-size: 13px
+    line-height: 31px
+    color: #fff
+
+// section titles styles
+.section-title
+  color: #222
+  font-size: 48px
+  text-transform: uppercase
+  font-family: $pf-ultra-black
 
 @import 'intro-section'
 @import 'menu'
 @import 'navigation'
 @import 'novelty-section'
+@import 'who-section'
 
 @import 'responsive/media_991'
 @import 'responsive/media_768'

@@ -1,26 +1,69 @@
 var IT_SCROLL = (function ($) {
   'use strict';
 
+  /* html stuff */
   var
-    noveltyItem = $('.novelty-section__item'),
-    anchor = $('.section-navigation__bullet'),
+    $noveltyItem = $('#novelty-section').find('div.novelty-section__item'),
+    $menuBlock = $('#menu-block-container'),
+    $anchor = $('.section-navigation__bullet'),
     $root = $('html, body');
 
+  function changeMenuBlock(scroll) {
 
+    if (scroll >= 50) {
+      $menuBlock
+        .addClass('hide')
+        .addClass('fixed')
+        .find('button.buy-ticket-btn')
+        .removeClass('hidden');
+    } else {
+      $menuBlock
+        .removeClass('fixed')
+        .removeClass('hide')
+        .find('button.buy-ticket-btn')
+        .addClass('hidden');
+    }
+
+  };
+
+  function animateNoveltyItems(scroll) {
+    if (scroll >= 350) {
+      $noveltyItem.addClass('show-up');
+    }
+  }
+
+
+  /* return public API */
   return {
 
+    /* initialize function */
     init: function () {
       $(window).on('scroll', this.onScroll);
-      anchor.on('click', this.animateAnchor);
+      $(window).on('load', this.onPageLoad);
+      $anchor.on('click', this.animateAnchor);
     },
 
-    // do stuff when scrolling
-    onScroll: function () {
+    /* do stuff when page loaded */
+    onPageLoad: function () {
       var $scroll = $(this).scrollTop();
 
-      if ($scroll >= 350) {
-        noveltyItem.addClass('show-up');
-      }
+      /* change state of menu block */
+      //changeMenuBlock($scroll);
+
+      //animateNoveltyItems($scroll);
+
+    },
+
+    /* do stuff when scrolling */
+    onScroll: function () {
+      var $scroll = $(this).scrollTop();
+      console.log($scroll);
+
+      /* change state of menu block */
+      changeMenuBlock($scroll);
+
+      animateNoveltyItems($scroll);
+
     },
 
     animateAnchor: function () {
@@ -36,6 +79,7 @@ var IT_SCROLL = (function ($) {
 })(jQuery);
 
 
+/* when document ready */
 $(document).ready(function () {
   'use strict';
 

@@ -27,19 +27,23 @@
 
     <div class="wrapper">
       <!-- menu button -->
-      <div class="menu-block">
-        <a class="menu-block__menu-btn" href="#" role="button">
-          <span class="line"></span>
-        </a>
-        <a class="menu-block__language-select" href="#" role="button">RU</a>
+      <div id="menu-block-container">
+        <div class="menu-block">
+          <a class="menu-block__menu-btn" href="#" role="button">
+            <span class="line"></span>
+          </a>
+          <a class="menu-block__language-select" href="#" role="button">RU</a>
+          <button class="buy-ticket-btn buy-ticket-btn--menu hidden">купить билет</button>
+        </div>
       </div>
+
 
       <div class="section-nav-wrapper">
         <div class="section-navigation">
           <nav role="navigation">
             <a class="section-navigation__bullet" href="#intro-section" role="button"></a>
             <a class="section-navigation__bullet" href="#novelty-section" role="button"></a>
-            <a class="section-navigation__bullet" href="#" role="button"></a>
+            <a class="section-navigation__bullet" href="#who-section" role="button"></a>
             <a class="section-navigation__bullet" href="#" role="button"></a>
             <a class="section-navigation__bullet" href="#" role="button"></a>
             <a class="section-navigation__bullet" href="#" role="button"></a>
@@ -69,10 +73,10 @@
       <!-- end: intro-section -->
 
       <!-- begin: novelty-section -->
-      <span id="novelty-section"></span>
-      <div class="novelty-section">
+      <!--<span id="novelty-section"></span>-->
+      <div id="novelty-section">
         <section>
-          <h2 class="novelty-section__title">что нового?</h2>
+          <h2 class="novelty-section__title section-title">что нового?</h2>
 
           <div class="cf"></div>
           <div class="novelty-section__item online">
@@ -131,6 +135,22 @@
         </section>
       </div>
       <!-- end: novelty-section -->
+
+      <!-- begin: who-section -->
+      <div id="who-section">
+        <section>
+          <h2 class="who-section__title section-title">для кого</h2>
+          <nav class="who-section__tabs" role="navigation">
+            <a class="who-section__tab" href=""></a>
+            <a class="who-section__tab" href=""></a>
+            <a class="who-section__tab" href=""></a>
+            <a class="who-section__tab" href=""></a>
+            <a class="who-section__tab" href=""></a>
+            <a class="who-section__tab" href=""></a>
+          </nav>
+        </section>
+      </div>
+      <!-- end: who-section -->
 
     </div>
 
