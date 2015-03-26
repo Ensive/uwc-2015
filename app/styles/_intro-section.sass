@@ -1,10 +1,5 @@
-.intro-section
+#intro-section
   background: #f8de2e url('../images/background-intro.jpg') 0 0 no-repeat
-  width: 100%
-  height: 768px
-  @include container()
-  @include cf()
-
   .intro-section__title
     height: 400px
     margin: 101px 0 54px 0
@@ -18,6 +13,16 @@
       font-family: $pf-extra-thin
     .block-word
       display: block
+      opacity: 0
+      -webkit-transition: -webkit-transform .7s ease, opacity .7s ease
+      -moz-transition: -moz-transform .7s ease, opacity .7s ease
+      -ms-transition: -ms-transform .7s ease, opacity .7s ease
+      -o-transition: -o-transform .7s ease, opacity .7s ease
+      transition: transform .7s ease, opacity .7s ease
+      // after end of animation
+      &.active
+        opacity: 1
+        @include transform(translate(0,0))
     .second-part-word
       letter-spacing: 3.5px
 
@@ -29,11 +34,31 @@
       margin: 0 0 0 18px
 
     .intro-section__title__date
-      margin: 0 0 0 16px
+      float: left
+      margin: 28px 0 0 16px
       font-family: $pf-extra-thin
       font-size: 40px
       text-transform: lowercase
-      color: #222
+      color: $it_black
+      opacity: 0
+      @include transform(translate(80px, 80px))
+      @include transition-delay(1.6s)
+
+    .block-word--it
+      @include transform(translateY(-100px))
+      @include transition-delay(0s)
+
+    .block-word--confe
+      @include transform(translateX(-200px))
+      @include transition-delay(0.4s)
+
+    .block-word--rence
+      @include transform(translateX(200px))
+      @include transition-delay(0.8s)
+
+    .block-word--last
+      @include transform(translateY(50px))
+      @include transition-delay(1.2s)
 
   .intro-section__quote
     font-family: $pf-light

@@ -41,7 +41,7 @@
       <div class="section-nav-wrapper">
         <div class="section-navigation">
           <nav role="navigation">
-            <a class="section-navigation__bullet" href="#intro-section" role="button"></a>
+            <a class="section-navigation__bullet active" href="#intro-section" role="button"></a>
             <a class="section-navigation__bullet" href="#novelty-section" role="button"></a>
             <a class="section-navigation__bullet" href="#who-section" role="button"></a>
             <a class="section-navigation__bullet" href="#" role="button"></a>
@@ -53,16 +53,15 @@
 
 
       <!-- begin: intro-section -->
-      <span id="intro-section"></span>
-      <div class="intro-section">
+      <div id="intro-section" class="section">
         <section>
           <h2 class="intro-section__title">
-            <span class="thin-text block-word">it</span>
-            <span class="block-word">confe</span><span class="block-word second-part-word">rence</span>
-            <span class="block-word last-line">
+            <span class="thin-text block-word block-word--it">it</span>
+            <span class="block-word block-word--confe">confe</span><span class="block-word block-word--rence second-part-word">rence</span>
+            <span class="block-word block-word--last last-line">
               <span class="thin-text">и</span><span class="last-letter">я</span>
             </span>
-            <small class="intro-section__title__date">12 - 18 апреля</small>
+            <small class="block-word intro-section__title__date">12 - 18 апреля</small>
           </h2>
           <div class="cf"></div>
           <button class="buy-ticket-btn buy-ticket-btn--intro">купить билет</button>
@@ -73,8 +72,7 @@
       <!-- end: intro-section -->
 
       <!-- begin: novelty-section -->
-      <!--<span id="novelty-section"></span>-->
-      <div id="novelty-section">
+      <div id="novelty-section" class="section">
         <section>
           <h2 class="novelty-section__title section-title">что нового?</h2>
 
@@ -137,17 +135,135 @@
       <!-- end: novelty-section -->
 
       <!-- begin: who-section -->
-      <div id="who-section">
+      <div id="who-section" class="section">
         <section>
-          <h2 class="who-section__title section-title">для кого</h2>
-          <nav class="who-section__tabs" role="navigation">
-            <a class="who-section__tab" href=""></a>
-            <a class="who-section__tab" href=""></a>
-            <a class="who-section__tab" href=""></a>
-            <a class="who-section__tab" href=""></a>
-            <a class="who-section__tab" href=""></a>
-            <a class="who-section__tab" href=""></a>
+          <h2 class="who-section__title section-title">для кого?</h2>
+
+          <div class="cf"></div>
+
+          <!-- tabs links -->
+          <nav class="who-section__tabs" role="tablist">
+            <a role="tab" aria-controls="for-who" class="who-section__tab" href="#for-who">
+              <span>для кого?</span>
+            </a>
+            <a role="tab" aria-controls="front-end" class="who-section__tab" href="#front-end">
+              <span>front-end developers</span>
+            </a>
+            <a role="tab" aria-controls="back-end" class="who-section__tab" href="#back-end">
+              <span>back-end developers</span>
+            </a>
+            <a role="tab" aria-controls="qa" class="who-section__tab" href="#qa">
+              <span>testers</span>
+            </a>
+            <a role="tab" aria-controls="design" class="who-section__tab active" href="#design">
+              <span>web-designers</span>
+            </a>
+            <a role="tab" aria-controls="startupers" class="who-section__tab" href="#startupers">
+              <span>startupers</span>
+            </a>
           </nav>
+
+          <!-- tabs content -->
+          <div class="who-section__tab-content">
+
+            <div role="tabpanel" id="for-who" class="who-section__tab-content__item">
+              <article>
+                <h3 class="hidden">Для кого?</h3>
+                <span class="who-section__tab-content__item__heading">В фокусе</span>
+                <p class="first-paragraph">тенденции в ИТ индустрии, самые дорогие и качественные кейсы, лайфхаки от настоящих мастеров.</p>
+                <p class="second-paragraph">Присоединяйтесь к нам на день с высококлассными презентациями от лучших в нашей отрасли.</p>
+                <span class="who-section__tab-content__item__heading">Участники конференции</span>
+                <ul class="custom-list">
+                  <li class="custom-list__item">ИТ специалисты со стажем</li>
+                  <li class="custom-list__item">ИТ специалисты с серьёзным стажем, директора и ведущие ИТ специалисты компаний</li>
+                  <li class="custom-list__item">джуниоры - их меньшинство и только те, кто крайне жаждет быстрого роста</li>
+                </ul>
+                <i>Предупреждаем сразу - материалы не для  новичков</i>
+              </article>
+            </div>
+
+            <div role="tabpanel" id="front-end" class="who-section__tab-content__item">
+              <article>
+                <h3 class="hidden">Front-end developers</h3>
+                <span class="who-section__tab-content__item__heading">В фокусе</span>
+                <p class="first-paragraph">тенденции в front-end разработке, самые дорогие и качественные кейсы, лайфхаки от настоящих мастеров.</p>
+                <p class="second-paragraph">Присоединяйтесь к нам на день с высококлассными презентациями от лучших в нашей отрасли.</p>
+                <span class="who-section__tab-content__item__heading">Участники конференции</span>
+                <ul class="custom-list">
+                  <li class="custom-list__item">front-end разработчики со стажем</li>
+                  <li class="custom-list__item">front-end разработчики с серьёзным стажем, тим лиды/синьйоры и ведущие разработчики передовых компаний</li>
+                  <li class="custom-list__item">джуниоры - их меньшинство и только те, кто крайне жаждет быстрого роста</li>
+                </ul>
+                <i>Предупреждаем сразу - материалы не для  новичков</i>
+              </article>
+            </div>
+
+            <div role="tabpanel" id="back-end" class="who-section__tab-content__item">
+              <article>
+                <h3 class="hidden">Back-end developers</h3>
+                <span class="who-section__tab-content__item__heading">В фокусе</span>
+                <p class="first-paragraph">тенденции в back-end разработке, самые дорогие и качественные кейсы, лайфхаки от настоящих мастеров.</p>
+                <p class="second-paragraph">Присоединяйтесь к нам на день с высококлассными презентациями от лучших в нашей отрасли.</p>
+                <span class="who-section__tab-content__item__heading">Участники конференции</span>
+                <ul class="custom-list">
+                  <li class="custom-list__item">back-end разработчики со стажем</li>
+                  <li class="custom-list__item">back-end разработчики с серьёзным стажем, тим лиды/синьйоры и ведущие разработчики передовых компаний</li>
+                  <li class="custom-list__item">джуниоры - их меньшинство и только те, кто крайне жаждет быстрого роста</li>
+                </ul>
+                <i>Предупреждаем сразу - материалы не для  новичков</i>
+              </article>
+            </div>
+
+            <div role="tabpanel" id="qa" class="who-section__tab-content__item">
+              <article>
+                <h3 class="hidden">Testers</h3>
+                <span class="who-section__tab-content__item__heading">В фокусе</span>
+                <p class="first-paragraph">тенденции в тестировании, самые дорогие и качественные кейсы, лайфхаки от настоящих мастеров.</p>
+                <p class="second-paragraph">Присоединяйтесь к нам на день с высококлассными презентациями от лучших в нашей отрасли.</p>
+                <span class="who-section__tab-content__item__heading">Участники конференции</span>
+                <ul class="custom-list">
+                  <li class="custom-list__item">тестеры со стажем</li>
+                  <li class="custom-list__item">тестеры с серьёзным стажем, тим лиды/синьйоры и ведущие тестеры разных компаний</li>
+                  <li class="custom-list__item">джуниоры - их меньшинство и только те, кто крайне жаждет быстрого роста</li>
+                </ul>
+                <i>Предупреждаем сразу - материалы не для  новичков</i>
+              </article>
+            </div>
+
+            <div role="tabpanel" id="design" class="who-section__tab-content__item active">
+              <article>
+                <h3 class="hidden">Web-designers</h3>
+                <span class="who-section__tab-content__item__heading">В фокусе</span>
+                <p class="first-paragraph">тенденции в веб-дизайне, самые дорогие и качественные кейсы, лайфхаки от настоящих мастеров.</p>
+                <p class="second-paragraph">Присоединяйтесь к нам на день с высококлассными презентациями от лучших в нашей отрасли.</p>
+                <span class="who-section__tab-content__item__heading">Участники конференции</span>
+                <ul class="custom-list">
+                  <li class="custom-list__item">дизайнеры со стажем</li>
+                  <li class="custom-list__item">дизайнеры с серьёзным стажем, арт-директора и ведущие дизайнеры компаний</li>
+                  <li class="custom-list__item">джуниоры - их меньшинство и только те, кто крайне жаждет быстрого роста</li>
+                </ul>
+                <i>Предупреждаем сразу - материалы не для  новичков</i>
+              </article>
+            </div>
+
+            <div role="tabpanel" id="startupers" class="who-section__tab-content__item">
+              <article>
+                <h3 class="hidden">Startupers</h3>
+                <span class="who-section__tab-content__item__heading">В фокусе</span>
+                <p class="first-paragraph">тенденции в ИТ стартапах, самые дорогие и качественные кейсы, лайфхаки от настоящих мастеров.</p>
+                <p class="second-paragraph">Присоединяйтесь к нам на день с высококлассными презентациями от лучших в нашей отрасли.</p>
+                <span class="who-section__tab-content__item__heading">Участники конференции</span>
+                <ul class="custom-list">
+                  <li class="custom-list__item">основатели стартапов со стажем</li>
+                  <li class="custom-list__item">основатели стартапов с серьёзным стажем, директора и ведущие ИТ бизнесмены различных компаний</li>
+                  <li class="custom-list__item">джуниоры - их меньшинство и только те, кто крайне жаждет быстрого роста</li>
+                </ul>
+                <i>Предупреждаем сразу - материалы не для  новичков</i>
+              </article>
+            </div>
+
+          </div>
+
         </section>
       </div>
       <!-- end: who-section -->

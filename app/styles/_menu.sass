@@ -1,4 +1,5 @@
 #menu-block-container
+  z-index: 1
   position: absolute
   top: 0
   right: 114px
@@ -7,10 +8,13 @@
     height: 64px
   &.hide .menu-block
     display: none
-  &.fixed .menu-block
-    position: fixed
-    display: block
-    background-color: #222
+  &.fixed
+    .menu-block
+      position: fixed
+      display: block
+      background-color: $it_black
+    .menu-block__menu-btn
+      background-color: #000
 
 .menu-block
   padding: 10px 16px 0 0

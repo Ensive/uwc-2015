@@ -1,9 +1,113 @@
 #who-section
   background: #f8de2e url('../images/background-for-who.jpg') 0 0 no-repeat
-  width: 100%
-  height: 768px
-  @include container()
-  @include cf()
-
+  position: relative
+  z-index: 0
   .who-section__title
     margin: 81px 0 0 0
+
+  .who-section__tabs
+    display: block
+    float: left
+    width: 25%
+    margin: 28px 0 0 0
+    .who-section__tab
+      display: block
+      width: 193px
+      height: 72px
+      padding: 39px 0 18px 0
+      font-family: $pf-bold
+      font-size: 14px
+      text-transform: uppercase
+      text-decoration: none
+      border-bottom: 5px solid $it_black
+      color: $it_black
+      overflow: hidden
+      span
+        display: block
+        -webkit-transition: -webkit-transform .2s ease
+        -moz-transition: -moz-transform .2s ease
+        -ms-transition: -ms-transform .2s ease
+        -o-transition: -o-transform .2s ease
+        transition: transform .2s ease
+      &:hover, &.active
+        background-color: $it_black
+        color: #fff
+        span
+          @include transform(translateX(9px))
+
+  // tab content styles
+  .who-section__tab-content
+    float: right
+    width: 75%
+    padding: 0 0 0 203px
+    margin: -20px 0 0 0
+    color: #fff
+    font-family: $pf-thin
+    font-size: 18px
+
+    .who-section__tab-content__item__heading
+      display: block
+      font-family: $pf-medium
+      line-height: 22px
+      margin: 0 0 10px 0
+    p
+      line-height: 22px
+      &.first-paragraph
+        margin: 0 0 10px 0
+      &.second-paragraph
+        margin: 0 0 51px 0
+    i
+      display: block
+      margin: 42px 0 0 0
+      font-family: $pf-thin-italic
+
+  // tab content item
+  .who-section__tab-content__item
+    display: none
+
+    &::before
+      content: ''
+      display: none
+      width: 76px
+      height: 74px
+      margin: 0 0 53px 0
+    &#for-who::before
+      background: url('../images/image-for-who.png') 0 0 no-repeat
+    &#front-end::before
+      background: url('../images/image-front-end.png') 0 0 no-repeat
+    &#back-end::before
+      background: url('../images/image-back-end.png') 0 0 no-repeat
+    &#qa::before
+      background: url('../images/image-qa.png') 0 0 no-repeat
+    &#design::before
+      background: url('../images/image-design.png') 0 0 no-repeat
+    &#startupers::before
+      background: url('../images/image-startupers.png') 0 0 no-repeat
+
+    &::after
+      content: ''
+      z-index: -1
+      position: absolute
+      top: 0
+      right: 0
+      display: none
+      width: 994px
+      height: 768px
+
+    &#for-who::after
+      background: url('../images/bg-for-who.png') 0 0 no-repeat
+    &#front-end::after
+      background: url('../images/bg-front-end.png') 0 0 no-repeat
+    &#back-end::after
+      background: url('../images/bg-back-end.png') 0 0 no-repeat
+    &#qa::after
+      background: url('../images/bg-qa.png') 0 0 no-repeat
+    &#design::after
+      background: url('../images/bg-design.png') 0 0 no-repeat
+    &#startupers::after
+      background: url('../images/bg-startupers.png') 0 0 no-repeat
+
+    &.active
+      display: block
+      &::before, &::after
+        display: block

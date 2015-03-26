@@ -1,4 +1,5 @@
 .section-nav-wrapper
+  z-index: 1
   position: absolute
   top: 332px
   right: 23px
@@ -15,3 +16,5 @@
     background-color: #FFF
     @include rounded(100%)
     @include shadow(0, 0, 10px, rgba(0, 0, 0, 0.1))
+    &.active
+      background-color: #888
