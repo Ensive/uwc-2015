@@ -9,6 +9,8 @@ var IT_UI_EVENTS = (function ($) {
     //$sectionTitle = $('.section-title'),
 
     $tabButton = $('#who-section').find('a.who-section__tab'),
+
+    $programItem = $('#program-section').find('.program-section__tab-content__list__item'),
     $menuBlock = $('#menu-block-container'),
 
     $anchor = $('.section-navigation__bullet'),
@@ -55,6 +57,8 @@ var IT_UI_EVENTS = (function ($) {
       $(window).on('scroll', this.doStuff);
       $(window).on('load', this.doStuff);
       $anchor.on('click', this.animateAnchor);
+
+      $programItem.on('mouseenter mouseleave', this.removeBorder);
 
       /* tabs */
       $tabButton.on('click', this.activateTab);
@@ -127,6 +131,12 @@ var IT_UI_EVENTS = (function ($) {
 
       /* make active the content of item */
       $(href).makeActive('active');
+    },
+
+    removeBorder: function () {
+      var $this = $(this);
+
+      $this.prev().toggleClass('hide-border');
     }
 
   };

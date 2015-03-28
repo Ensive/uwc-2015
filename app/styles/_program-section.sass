@@ -1,0 +1,148 @@
+#program-section
+  max-height: 768px
+  overflow: hidden
+  .program-section__title
+    margin: 46px 0 42px 0
+
+  .program-section__tabs
+    width: 14.47368421%
+  .program-section__tab
+    padding: 18px 0 18px 0
+    width: 165px
+    .program-section__date
+      display: block
+      margin: 0 0 5px 0
+      font-family: $pf-bold
+      font-size: 14px
+      font-size: 1.4em
+      text-transform: uppercase
+      color: #888
+    .program-section__day-name
+      //color: $it_black
+
+  .program-section__content-container
+    width: 75.614035087%
+    margin: 0 0 0 9.912280701%
+    overflow-y: scroll
+    //height: 632px
+    max-height: 632px
+    -webkit-box-shadow: inset 0 7px 9px -7px rgba(0, 0, 0, 0.2)
+    -moz-box-shadow: inset 0 7px 9px -7px rgba(0, 0, 0 ,0.2)
+    box-shadow: inset 0 7px 9px -7px rgba(0, 0, 0, 0.2)
+    &::-webkit-scrollbar
+      width: 0 !important
+
+  // list item
+  .list__item__container
+    float: left
+    width: 96.9837587%
+  .program-section__tab-content__list__item__link
+    display: block
+    width: 100%
+    height: 82px
+    padding: 20px 0 22px
+    text-decoration: none
+    color: $it_black
+    border-right: 15px solid transparent
+    border-left: 15px solid transparent
+    -webkit-transition: margin 0s ease, background-color .2s ease, border-color .2s ease
+    -moz-transition: margin 0s ease, background-color .2s ease, border-color .2s ease
+    -ms-transition: margin 0s ease, background-color .2s ease, border-color .2s ease
+    -o-transition: margin 0s ease, background-color .2s ease, border-color .2s ease
+    transition: margin 0s ease, background-color .2s ease, border-color .2s ease
+    &::after
+      content: ''
+      display: block
+      float: right
+      //min-width: 26px
+      width: 3.016241299%
+      padding: 0 2px
+      height: 100%
+      max-height: 26px
+      background: #3C3C3C url('../images/plus-icon.png') center center no-repeat
+      border: 2px solid transparent
+      @include transition(background)
+  .program-section__tab-content__list__item
+    @include cf()
+    &::after
+      content: ''
+      display: block
+      width: 96.6%
+      height: 1px
+      margin: 0 auto
+      background-color: #C8C8C8
+    &.hide-border::after
+      visibility: hidden
+    // @todo: refactor
+    //&:first-child,
+    //&.first
+    .list__item__header
+      font-family: $pf-bold
+      text-transform: uppercase
+      color: $it_black
+      margin: 0 0 14px 0
+      .time
+        font-size: 12px
+        font-size: 1.2rem
+        &::after
+          content: ''
+          display: inline-block
+          width: 6px
+          height: 6px
+          margin: 0 12px 0 13px
+          background-color: #FFF
+          @include rounded(100%)
+      .name
+        font-size: 11px
+        font-size: 1.1rem
+    &:hover
+      &::after
+        visibility: hidden
+      .program-section__tab-content__list__item__link
+        //margin: -1px 0 0 0
+        border-right: 15px solid #fff
+        border-left: 15px solid #fff
+        background-color: #fff
+        @include shadow(0, 0, 10px, rgba(0, 0, 0, 0.1))
+        &::after
+          border: 2px solid #3c3c3c
+          background: #fff url('../images/plus-dark-icon.png') center center no-repeat
+
+    .list__item__title
+      color: $it_black
+      font-family: $pf-thin
+      font-size: 20px
+      font-size: 2rem
+
+  // dinner item
+  .list__item__dinner
+    font-family: $pf-bold
+    border-right: 15px solid transparent
+    border-left: 15px solid transparent
+    .time
+      font-size: 12px
+      font-size: 1.2rem
+      text-transform: uppercase
+      &::after
+        content: ''
+        display: inline-block
+        width: 6px
+        height: 6px
+        margin: 0 12px 0 13px
+        background-color: #FFF
+        @include rounded(100%)
+    .name
+      font-size: 11px
+      font-size: 1.1rem
+      text-transform: uppercase
+    &::before
+      margin: 0 0 16px 0
+    &::after
+      margin: 14px 0 0 0
+    &::before,
+    &::after
+      content: ''
+      display: block
+      height: 4px
+      background-color: #000
+

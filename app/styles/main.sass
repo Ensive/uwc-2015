@@ -7,7 +7,9 @@
 @import 'fonts'
 
 // @todo: implement fallbacks for ie6-7
-*
+*,
+*::after,
+*::before
   @include box-sizing
 
 html
@@ -36,6 +38,7 @@ img
 
 // buy ticket button styles
 .buy-ticket-btn
+  z-index: 0
   position: relative
   font-family: $pf-ultra-black
   background: none
@@ -43,15 +46,16 @@ img
   text-transform: uppercase
   font-size: 16px
   overflow: hidden
+  display: block
   @include cf()
-  @include visibility-hidden()
   .btn-text
+    z-index: 1
     display: block
-    position: relative
     @include transition(color)
   &::before
     content: ''
     position: absolute
+    z-index: -1
     top: 0
     left: 0
     display: block
@@ -69,22 +73,30 @@ img
     -ms-transform: translate(-110%, 0) skewX(45deg)
     -o-transform: translate(-110%, 0) skewX(45deg)
     transform: translate(-110%, 0) skewX(45deg)
+    @include visibility-hidden()
+
   &.buy-ticket-btn--intro
     width: 474px
     height: 70px
     .btn-text
       color: #111
+
   &.buy-ticket-btn--menu
     width: 171px
     float: right
     height: 39px
     margin: 0 24px 0 0
-    border: 4px solid #fff
+    //border: 4px solid #fff
+    border: 4px solid $it_yellow
     font-family: $pf-black
     font-size: 13px
     line-height: 31px
     .btn-text
-      color: #fff
+      //color: #fff
+      color: $it_yellow
+    &::before
+      background-color: $it_yellow
+
   &:hover
     cursor: pointer
     .btn-text
@@ -97,6 +109,10 @@ img
       -o-transform: translate(0, 0) skewX(45deg)
       transform: translate(0, 0) skewX(45deg)
 
+  &.buy-ticket-btn--menu:hover
+    .btn-text
+      color: $it_black
+
 
 // section titles styles
 .section
@@ -106,6 +122,8 @@ img
   @include container()
   @include cf()
   @include background-cover()
+  &.section--gray
+    background-color: #E9E9E9
 
 .section-title
   color: $it_black
@@ -147,6 +165,45 @@ img
       //display: block
       color: #F8DE2E
 
+// section with tabs
+.section-tab-container
+  float: right
+  //width: 75%
+
+.section-tabs
+  display: block
+  float: left
+  //width: 25%
+  width: 17.105263157%
+  .section-tab
+    display: block
+    width: 195px
+    //width: 17.105263157%
+    height: 72px
+    padding: 39px 0 18px 0
+    text-transform: uppercase
+    text-decoration: none
+    border-bottom: 5px solid $it_black
+    overflow: hidden
+    color: $it_black
+    .tab-block
+      display: block
+      -webkit-transition: -webkit-transform .2s ease
+      -moz-transition: -moz-transform .2s ease
+      -ms-transition: -ms-transform .2s ease
+      -o-transition: -o-transform .2s ease
+      transition: transform .2s ease
+      .text
+        display: block
+        font-family: $pf-bold
+        font-size: 14px
+    &:hover, &.active
+      background-color: $it_black
+      color: #fff
+      .tab-block
+        @include transform(translateX(9px))
+
+
 // sections styles
 @import 'intro-section'
 @import 'menu'
@@ -154,6 +211,8 @@ img
 @import 'novelty-section'
 @import 'who-section'
 @import 'speakers-section'
+@import 'program-section'
+@import 'prices-section'
 
 // breakpoints
 @import 'responsive/media_1200'
