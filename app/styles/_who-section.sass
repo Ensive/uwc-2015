@@ -3,9 +3,24 @@
   position: relative
   z-index: 0
   .who-section__title
+    z-index: 1
+    position: relative
     margin: 81px 0 0 0
 
+  .who-section__tabs-bg
+    z-index: 0
+    position: absolute
+    top: 0
+    left: 0
+    width: 40.5%
+    margin: 0 0 0 -100px
+    height: 100%
+    background-color: #f8de2e
+    @include transition(width)
+    @include transform(skewX(-14.3deg))
   .who-section__tabs
+    z-index: 1
+    position: relative
     display: block
     float: left
     width: 25%

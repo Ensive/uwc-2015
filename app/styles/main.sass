@@ -11,10 +11,12 @@
   @include box-sizing
 
 html
-  font-size: 16px
+  //font-size: 16px
+  font-size: 62.5%
 
 body
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
+  //font-size: 100%
   color: #333
 
 img
@@ -34,18 +36,44 @@ img
 
 // buy ticket button styles
 .buy-ticket-btn
+  position: relative
   font-family: $pf-ultra-black
   background: none
   border: 6px solid #111
   text-transform: uppercase
   font-size: 16px
+  overflow: hidden
   @include cf()
-  &:hover
-    cursor: pointer
+  @include visibility-hidden()
+  .btn-text
+    display: block
+    position: relative
+    @include transition(color)
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    display: block
+    width: 100%
+    height: 100%
+    background-color: #111
+    opacity: 0
+    -webkit-transition: transform .2s ease, opacity .2s ease
+    -moz-transition: transform .2s ease, opacity .2s ease
+    -ms-transition: transform .2s ease, opacity .2s ease
+    -o-transition: transform .2s ease, opacity .2s ease
+    transition: transform .2s ease, opacity .2s ease
+    -webkit-transform: translate(-110%, 0) skewX(45deg)
+    -moz-transform: translate(-110%, 0) skewX(45deg)
+    -ms-transform: translate(-110%, 0) skewX(45deg)
+    -o-transform: translate(-110%, 0) skewX(45deg)
+    transform: translate(-110%, 0) skewX(45deg)
   &.buy-ticket-btn--intro
     width: 474px
     height: 70px
-    color: #111
+    .btn-text
+      color: #111
   &.buy-ticket-btn--menu
     width: 171px
     float: right
@@ -55,12 +83,26 @@ img
     font-family: $pf-black
     font-size: 13px
     line-height: 31px
-    color: #fff
+    .btn-text
+      color: #fff
+  &:hover
+    cursor: pointer
+    .btn-text
+      color: #fff
+    &::before
+      opacity: 1
+      -webkit-transform: translate(0, 0) skewX(45deg)
+      -moz-transform: translate(0, 0) skewX(45deg)
+      -ms-transform: translate(0, 0) skewX(45deg)
+      -o-transform: translate(0, 0) skewX(45deg)
+      transform: translate(0, 0) skewX(45deg)
+
 
 // section titles styles
 .section
   width: 100%
-  height: 768px
+  //height: 768px
+  min-height: 768px
   @include container()
   @include cf()
   @include background-cover()
@@ -68,8 +110,24 @@ img
 .section-title
   color: $it_black
   font-size: 48px
+  //font-size: 3em
+  font-size: 4.8rem
   text-transform: uppercase
   font-family: $pf-ultra-black
+  //.text, .question-mark
+    display: block
+    float: left
+    -webkit-transition: -webkit-transform .5s ease-in
+    -moz-transition: -moz-transform .5s ease-in
+    -ms-transition: -ms-transform .5s ease-in
+    -o-transition: -o-transform .5s ease-in
+    transition: transform .5s ease-in
+    @include transform(translate(-200%, 0))
+    .question-mark
+      margin: 0 0 0 15px
+    &.show-up
+      .text
+        @include transform(translateX(0))
 
 // list styles
 .custom-list
@@ -89,11 +147,15 @@ img
       //display: block
       color: #F8DE2E
 
+// sections styles
 @import 'intro-section'
 @import 'menu'
 @import 'navigation'
 @import 'novelty-section'
 @import 'who-section'
+@import 'speakers-section'
 
+// breakpoints
+@import 'responsive/media_1200'
 @import 'responsive/media_991'
 @import 'responsive/media_768'

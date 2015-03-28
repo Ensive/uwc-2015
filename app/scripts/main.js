@@ -4,9 +4,13 @@ var IT_UI_EVENTS = (function ($) {
   /* html stuff */
   var
     $blockWord = $('#intro-section').find('.block-word'),
+
     $noveltyItem = $('#novelty-section').find('div.novelty-section__item'),
+    //$sectionTitle = $('.section-title'),
+
     $tabButton = $('#who-section').find('a.who-section__tab'),
     $menuBlock = $('#menu-block-container'),
+
     $anchor = $('.section-navigation__bullet'),
     $root = $('html, body');
 
@@ -22,9 +26,13 @@ var IT_UI_EVENTS = (function ($) {
     }
   }
 
-  function animateNoveltyItems(scroll) {
+  function animateNoveltySection(scroll) {
     return scroll >= 350 ? $noveltyItem.addClass('show-up') : false;
   }
+
+  //function animateSectionTitle(scroll) {
+  //  (scroll >= 250 && $sectionTitle.hasClass('.novelty-section__title')) ? $sectionTitle.addClass('show-up') : false;
+  //}
 
   /* add some custom jquery methods */
   $.fn.extend({
@@ -44,8 +52,8 @@ var IT_UI_EVENTS = (function ($) {
 
     /* initialize function */
     init: function () {
-      $(window).on('scroll', this.onScroll);
-      $(window).on('load', this.onPageLoad);
+      $(window).on('scroll', this.doStuff);
+      $(window).on('load', this.doStuff);
       $anchor.on('click', this.animateAnchor);
 
       /* tabs */
@@ -53,37 +61,52 @@ var IT_UI_EVENTS = (function ($) {
     },
 
     /* do stuff when page loaded */
-    onPageLoad: function () {
+    doStuff: function () {
       var $scroll = $(this).scrollTop();
-
-      /* change state of menu block */
-      changeMenuBlock($scroll);
-
-      animateNoveltyItems($scroll);
+      //console.log($scroll);
 
       /* init animation of intro title */
       $blockWord.addClass('active');
 
-    },
-
-    /* do stuff when scrolling */
-    onScroll: function () {
-      var $scroll = $(this).scrollTop();
-      //console.log($scroll);
-
       /* change state of menu block */
       changeMenuBlock($scroll);
 
-      animateNoveltyItems($scroll);
+      //
+      animateNoveltySection($scroll);
+
+      // @todo: check for scroll and make active particular bullet
+
+      // init animation of section titles
+      //animateSectionTitle($scroll);
 
     },
 
+    /* do stuff when scrolling */
+    //onScroll: function () {
+    //  var $scroll = $(this).scrollTop();
+    //  console.log($scroll);
+    //
+    //  /* change state of menu block */
+    //  changeMenuBlock($scroll);
+    //
+    //  //
+    //  animateNoveltySection($scroll);
+    //
+    //  // init animation of section titles
+    //  animateSectionTitle($scroll);
+    //
+    //},
+
     animateAnchor: function () {
-      var $this = $(this);
+      var
+        $this = $(this),
+        href = $this.attr('href');
 
       $root.animate({
         scrollTop: $( $.attr(this, 'href') ).offset().top
-      }, 600);
+      }, 600, function () {
+        window.location.hash = href;
+      });
 
       /* make current item active */
       $this.makeActive('active');
@@ -91,7 +114,9 @@ var IT_UI_EVENTS = (function ($) {
       return false;
     },
 
-    activateTab: function () {
+    activateTab: function (e) {
+      console.log($(window).width());
+      e.preventDefault();
       var $this = $(this);
 
       /* make current item active */

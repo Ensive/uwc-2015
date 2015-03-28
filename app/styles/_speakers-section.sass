@@ -1,0 +1,116 @@
+#speakers-section
+  background-color: #191919
+
+  // header styles
+  .speakers__header
+    margin: 87px 0 44px 0
+    @include cf()
+  .speakers__title
+    color: #fff
+    margin: 0 0 72px 0
+
+  .speakers__control
+    float: right
+    width: 14.47368421%
+  .speakers__tabs
+    float: left
+    width: 82.894736842%
+    margin: 0 2.631578947% 0 0
+    .speakers__tab
+      display: block
+      float: left
+      //width: 165px
+      width: 17.46031746%
+      height: 57px
+      //margin: 0 29px 0 0
+      margin: 0 3.174603174% 0 0
+      padding: 0 0 0 10px
+      font-family: $pf-bold
+      font-size: 14px
+      //font-size: 0.875em
+      //font-size: 0.875rem
+      font-size: 1.4rem
+      line-height: 62px
+      text-transform: uppercase
+      text-decoration: none
+      color: #fff
+      border-bottom: 5px solid #242424
+      // @todo: refactor
+      overflow: hidden
+      &.active
+        color: #191919
+        background-color: #fff
+        border: 0
+      &.last,
+      &:last-child
+        margin: 0 0 0 0
+
+  .speakers__pagination
+    float: left
+    font-family: $pf-bold
+    font-size: 14px
+    text-transform: uppercase
+    color: #4A4949
+    width: 41.212121212%
+    margin: 22px 0 0 0
+  .speakers__nav
+    float: right
+    width: 58.787878787%
+    .speakers__nav__arrow
+      width: 43.298969072%
+      height: 56px
+      border: 4px solid #242424
+      //background: none
+      background: url('../images/arrow-left.png') center center no-repeat
+      &.speakers__nav__arrow--right
+        float: right
+        background: url('../images/arrow-right.png') center center no-repeat
+      &:hover
+        cursor: pointer
+
+  // speaker items
+  .speakers__grid
+    margin: 0 0 60px 0
+  .speaker__person
+    display: block
+    float: left
+    //width: 165px
+    width: 14.47368421%
+    height: 273px
+    padding: 0
+    margin: 0 2.631578947% 0 0
+    background-color: #FFF
+    //margin: 0 29px 0 0
+    &:nth-child(6n)
+      margin: 0
+
+    .speaker__person__photo
+      width: 100%
+
+    .speaker__person__name
+      font-family: $pf-bold
+      margin: 11px 7px 6px 9px
+      font-size: 14px
+      text-transform: uppercase
+      color: #000
+    .speaker__person__desc
+      font-family: $pf-thin
+      margin: 0 9px
+      font-size: 13px
+      line-height: 14px
+      color: #555
+
+  // show all button
+  .speakers__show-all-btn
+    display: block
+    margin: 0 auto
+    width: 168px
+    height: 43px
+    border: 4px solid #242424
+    background: none
+    color: #FFF
+    font-family: $pf-bold
+    font-size: 12px
+    text-transform: uppercase
+    &:hover
+      cursor: pointer

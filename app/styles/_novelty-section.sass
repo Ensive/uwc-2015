@@ -3,6 +3,7 @@
   padding-bottom: 232px
   .novelty-section__title
     margin: 147px 0 102px 0
+    @include cf()
 
   // item block
   // @todo: refactor
@@ -16,7 +17,15 @@
     -o-transition: -o-transform .4s linear, opacity .4s linear
     transition: transform .4s linear, opacity .4s linear
     @include transform(translate(50px, 100px))
-    @for $i from 1 through 5
+    &.online
+      @include transition-delay(.15s)
+    &.development
+      @include transition-delay(.30s)
+    &.afterparty
+      @include transition-delay(.45s)
+    &.unique
+      @include transition-delay(.6s)
+    //@for $i from 1 through 5
       &:nth-of-type(#{$i})
         @include transition-delay($i * .15s)
     &.online,
@@ -41,8 +50,11 @@
       margin: 0 0 10px 0
       font-family: $pf-bold
       font-size: 14px
+      font-size: 1.4rem
       text-transform: uppercase
       color: #444
     .novelty-section__item__text
+      font-size: 14px
+      font-size: 1.4rem
       line-height: 20px
       font-family: $pf-light
