@@ -1,1 +1,100 @@
 #pricing-section
+  //max-height: 768px
+  .pricing__item__container
+    height: 310px
+  .pricing__item
+    display: block
+    width: 33%
+    height: 768px
+    float: left
+    padding: 92px 15px 0
+    &::before
+      content: ''
+      display: block
+      background: url('../images/light-pricing-icon.png') center center no-repeat
+      width: 73px
+      height: 41px
+      min-height: 45px
+      margin: 0 auto 15px
+    .buy-ticket-btn
+      //width: 57.362637362%
+      width: 261px
+      height: 50px
+      font-family: $pf-black
+      font-size: 13px
+      font-size: 1.3rem
+      margin: 0 auto
+    .pricing__item__title
+      color: #222
+      font-family: $pf-black
+      font-size: 36px
+      font-size: 3.6rem
+      text-align: center
+      margin: 0 0 25px 0
+    .pricing__item__label,
+    .pricing__item__list
+      display: block
+      font-family: $pf-thin
+      color: #777
+      font-size: 16px
+      font-size: 1.6rem
+      max-width: 270px
+      margin: 0 auto
+    .pricing__item__label
+      margin: 0 auto 33px
+    .pricing__item__list
+      color: #222
+    .pricing__item__price
+      display: block
+      margin: 0 0 25px 0
+      font-family: $pf-light
+      font-size: 14px
+      font-size: 1.4rem
+      text-align: center
+      .number
+        font-size: 24px
+        font-size: 2.4rem
+
+    &.light
+      background-color: $it_gray
+      .custom-list__item
+        &::before
+          color: $it_black
+      .color-text
+        color: #888
+    &.gold
+      background-color: #F8DE2E
+      .custom-list__item
+        &::before
+            color: $it_black
+      .color-text,
+      .pricing__item__label
+        color: #857401
+      &::before
+        background: url('../images/gold-pricing-icon.png') center center no-repeat
+        width: 45px
+        height: 45px
+    &.premium
+      background-color: #191919
+      .pricing__item__list
+        color: $it_gray
+      .pricing__item__label
+        color: #999
+      .color-text,
+      .pricing__item__label
+        color: #555555
+      .pricing__item__price
+        color: #E9E9E9
+      .buy-ticket-btn
+        color: #F8DE2E
+        border-color: $it_yellow
+        &::before
+          background-color: $it_yellow
+        &:hover .btn-text
+          color: $it_black
+      &::before
+        background: url('../images/premium-pricing-icon.png') center center no-repeat
+        width: 54px
+        height: 45px
+      .pricing__item__title
+        color: $it_yellow
