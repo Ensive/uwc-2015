@@ -1,11 +1,34 @@
 @media only screen and (max-width: 1200px)
+  // general section
   .section
     padding: 0 80px
+
+  // menu block
+  #menu-block-container
+    right: 80px
 
   // who section
   #who-section .who-section__tabs-bg
     width: 47.5%
 
-  // speakers section
-  #speakers-section .speakers__tabs .speakers__tab
-    //font-size:
+  #video-section
+    height: auto
+    min-height: 100%
+    padding-bottom: 40px
+
+  // pricing section
+  #pricing-section
+    padding: 0 40px
+    .pricing__item
+      .buy-ticket-btn
+        width: 70.731707317%
+    .pricing__item
+      &.light,
+      &.gold,
+      &.premium
+        width: 33.3333333333%
+      &.light
+        padding-right: 20px
+      &.premium
+        padding-left: 20px
+

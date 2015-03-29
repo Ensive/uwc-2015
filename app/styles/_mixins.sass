@@ -3,9 +3,6 @@
 $it_black: #222
 $it_yellow: #F8DE2E
 $it_gray: #E9E9E9
-//$td_text_ligh_gray: #7C7770
-//$td_light_blue: #71B6D5
-//$td_title: #484848
 
 // fonts
 $pf-extra-thin: 'pf_encore_sans_proextrathin'
@@ -54,17 +51,6 @@ $pf-ultra-black: 'pf_encore_sans_proultra_black'
   -ms-transform: $transform
   -o-transform: $transform
   transform: $transform
-
-// gradient
-// @todo: reconsider
-@mixin linear-gradient( $from, $to )
-  background-color: $to
-  background-image: -moz-linear-gradient($from, $to)
-  background-image: -o-linear-gradient($from, $to)
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, $from), color-stop(1, $to))
-  background-image: -webkit-linear-gradient($from, $to)
-  background-image: -ms-linear-gradient($from, $to)
-  background-image: linear-gradient($from, $to)
 
 // general mixins
 @mixin box-sizing

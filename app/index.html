@@ -1,5 +1,8 @@
 <!doctype html>
-<html class="no-js" lang="">
+<!--[if lt IE 7]> <html lang="ru" class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>    <html lang="ru" class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>    <html lang="ru" class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="ru" class=""> <!--<![endif]-->
   <head>
     <meta charset="utf-8">
     <meta name="description" content="">
@@ -33,10 +36,33 @@
           <a class="menu-block__menu-btn" href="#" role="button">
             <span class="line"></span>
           </a>
-          <a class="menu-block__language-select" href="#" role="button">RU</a>
-          <button class="buy-ticket-btn buy-ticket-btn--menu hidden">
+          <div class="menu-block__language-select" role="button">
+            <a href="#" class="current-language">РУ</a>
+            <ul class="language-list">
+              <li class="language-item"><a class="language-link" href="#">УК</a></li>
+              <li class="language-item"><a class="language-link" href="#">EN</a></li>
+            </ul>
+          </div>
+          <a href="#" class="buy-ticket-btn buy-ticket-btn--menu hidden" role="button">
             <span class="btn-text">купить билет</span>
-          </button>
+          </a>
+        </div>
+      </div>
+      <div id="menu-wrapper">
+        <div class="menu">
+          <div class="menu__list" role="menu">
+            <button class="menu-close-btn"></button>
+            <div class="menu__items__wrapper">
+              <a class="menu__item active first" href="#intro-section" role="menuitem">Главная</a>
+              <a class="menu__item" href="#novelty-section" role="menuitem">Что нового?</a>
+              <a class="menu__item" href="#who-section" role="menuitem">Для кого?</a>
+              <a class="menu__item" href="#speakers-section" role="menuitem">Спикеры</a>
+              <a class="menu__item" href="#program-section" role="menuitem">Программа</a>
+              <a class="menu__item" href="#pricing-section" role="menuitem">Билеты</a>
+              <a class="menu__item" href="#video-section" role="menuitem">Видео</a>
+              <a class="menu__item" href="#partners-section" role="menuitem">Партнеры</a>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -50,8 +76,8 @@
             <a class="section-navigation__bullet" href="#speakers-section" role="button"></a>
             <a class="section-navigation__bullet" href="#program-section" role="button"></a>
             <a class="section-navigation__bullet" href="#pricing-section" role="button"></a>
-            <a class="section-navigation__bullet" href="#" role="button"></a>
-            <a class="section-navigation__bullet" href="#" role="button"></a>
+            <a class="section-navigation__bullet" href="#video-section" role="button"></a>
+            <a class="section-navigation__bullet" href="#partners-section" role="button"></a>
           </nav>
         </div>
       </div>
@@ -81,10 +107,7 @@
       <!-- begin: novelty-section -->
       <div id="novelty-section" class="section section--gray">
         <section>
-          <h2 class="novelty-section__title section-title">
-            <span class="text">что нового</span>
-            <span class="question-mark">?</span>
-          </h2>
+          <h2 class="novelty-section__title section-title">что нового?</h2>
 
           <div class="cf"></div>
           <div class="novelty-section__item online">
@@ -154,38 +177,38 @@
 
           <!-- tabs links -->
           <div class="who-section__tabs-bg"></div>
-          <nav class="who-section__tabs section-tabs" role="tablist">
-            <a role="tab" aria-controls="for-who" class="who-section__tab section-tab" href="#for-who">
+          <div class="who-section__tabs section-tabs" role="tablist">
+            <a role="tab" class="who-section__tab section-tab" href="#for-who">
               <div class="tab-block">
                 <span class="text">для кого?</span>
               </div>
             </a>
-            <a role="tab" aria-controls="front-end" class="who-section__tab section-tab" href="#front-end">
+            <a role="tab" class="who-section__tab section-tab" href="#front-end">
               <div class="tab-block">
                 <span class="text">front-end developers</span>
               </div>
             </a>
-            <a role="tab" aria-controls="back-end" class="who-section__tab section-tab" href="#back-end">
+            <a role="tab" class="who-section__tab section-tab" href="#back-end">
               <div class="tab-block">
                 <span class="text">back-end developers</span>
               </div>
             </a>
-            <a role="tab" aria-controls="qa" class="who-section__tab section-tab" href="#qa">
+            <a role="tab" class="who-section__tab section-tab" href="#qa">
               <div class="tab-block">
                 <span class="text">testers</span>
               </div>
             </a>
-            <a role="tab" aria-controls="design" class="who-section__tab section-tab active" href="#design">
+            <a role="tab" class="who-section__tab section-tab active" href="#design">
               <div class="tab-block">
                 <span class="text">web-designers</span>
               </div>
             </a>
-            <a role="tab" aria-controls="startupers" class="who-section__tab section-tab" href="#startupers">
+            <a role="tab" class="who-section__tab section-tab" href="#startupers">
               <div class="tab-block">
                 <span class="text">startupers</span>
               </div>
             </a>
-          </nav>
+          </div>
 
           <!-- tabs content -->
           <div class="who-section__tab-content section-tab-container">
@@ -301,11 +324,11 @@
             <h2 class="section-title speakers__title">спикеры</h2>
             <div class="cf"></div>
             <div class="speakers__tabs" role="tablist">
-              <a role="tab" aria-controls="all-speakers" class="speakers__tab active" href="#all-speakers">все спикеры</a>
-              <a role="tab" aria-controls="front-end-speakers" class="speakers__tab" href="#front-end-speakers">front-end</a>
-              <a role="tab" aria-controls="back-end-speakers" class="speakers__tab" href="#back-end-speakers">back-end</a>
-              <a role="tab" aria-controls="qa-speakers" class="speakers__tab" href="#qa-speakers">qa</a>
-              <a role="tab" aria-controls="design-speakers last" class="speakers__tab" href="#design-speakers">web-design</a>
+              <a role="tab" class="speakers__tab active" href="#all-speakers">все спикеры</a>
+              <a role="tab" class="speakers__tab" href="#front-end-speakers">front-end</a>
+              <a role="tab" class="speakers__tab" href="#back-end-speakers">back-end</a>
+              <a role="tab" class="speakers__tab" href="#qa-speakers">qa</a>
+              <a role="tab" class="speakers__tab" href="#design-speakers">web-design</a>
             </div>
             <div class="speakers__control">
               <div class="speakers__pagination">
@@ -325,8 +348,10 @@
                 <div class="speaker__person__photo-container">
                   <img class="speaker__person__photo" src="images/jean-baptiste-guerrax-photo.jpg" alt="Фото - Jean-Baptiste Guerrax" />
                 </div>
-                <h4 class="speaker__person__name">Jean-Baptiste Guerrax</h4>
-                <p class="speaker__person__desc">разработчик комплексных back-end решений</p>
+                <div class="speaker__person__info">
+                  <h4 class="speaker__person__name">Jean-Baptiste Guerrax</h4>
+                  <p class="speaker__person__desc">разработчик комплексных back-end решений</p>
+                </div>
               </article>
             </div>
             <div class="speaker__person" data-filter="">
@@ -334,8 +359,10 @@
                 <div class="speaker__person__photo-container">
                   <img class="speaker__person__photo" src="images/jurij-mikolishin-photo.jpg" alt="Фото - Юрий Миколишин" />
                 </div>
-                <h4 class="speaker__person__name">Юрий Миколишин</h4>
-                <p class="speaker__person__desc">разработчик комплексных back-end решений</p>
+                <div class="speaker__person__info">
+                  <h4 class="speaker__person__name">Юрий Миколишин</h4>
+                  <p class="speaker__person__desc">разработчик комплексных back-end решений</p>
+                </div>
               </article>
             </div>
             <div class="speaker__person" data-filter="">
@@ -343,8 +370,10 @@
                 <div class="speaker__person__photo-container">
                   <img class="speaker__person__photo" src="images/jurij-artjuh-photo.jpg" alt="Фото - Юрий Артюх" />
                 </div>
-                <h4 class="speaker__person__name">Юрий Артюх</h4>
-                <p class="speaker__person__desc">разработчик комплексных back-end решений</p>
+                <div class="speaker__person__info">
+                  <h4 class="speaker__person__name">Юрий Артюх</h4>
+                  <p class="speaker__person__desc">разработчик комплексных back-end решений</p>
+                </div>
               </article>
             </div>
             <div class="speaker__person" data-filter="">
@@ -352,8 +381,10 @@
                 <div class="speaker__person__photo-container">
                   <img class="speaker__person__photo" src="images/aleksandr-majdanjuk-photo.jpg" alt="Фото - Александр Майданюк" />
                 </div>
-                <h4 class="speaker__person__name">Александр Майданюк</h4>
-                <p class="speaker__person__desc">разработчик комплексных back-end решений</p>
+                <div class="speaker__person__info">
+                  <h4 class="speaker__person__name">Александр Майданюк</h4>
+                  <p class="speaker__person__desc">разработчик комплексных back-end решений</p>
+                </div>
               </article>
             </div>
             <div class="speaker__person" data-filter="">
@@ -361,8 +392,10 @@
                 <div class="speaker__person__photo-container">
                   <img class="speaker__person__photo" src="images/darja-gornicskaja-photo.jpg" alt="Фото - Дарья Горницская" />
                 </div>
-                <h4 class="speaker__person__name">Дарья Горницская</h4>
-                <p class="speaker__person__desc">Віце-президент GlobalLogic. Керівник київського центру інжинірингу компанії</p>
+                <div class="speaker__person__info">
+                  <h4 class="speaker__person__name">Дарья Горницская</h4>
+                  <p class="speaker__person__desc">Віце-президент GlobalLogic. Керівник київського центру інжинірингу компанії</p>
+                </div>
               </article>
             </div>
             <div class="speaker__person" data-filter="">
@@ -370,13 +403,17 @@
                 <div class="speaker__person__photo-container">
                   <img class="speaker__person__photo" src="images/andrej-javorskij-photo.jpg" alt="Фото - Андрей Яворский" />
                 </div>
-                <h4 class="speaker__person__name">Андрей Яворский</h4>
-                <p class="speaker__person__desc">разработчик комплексных back-end решений</p>
+                <div class="speaker__person__info">
+                  <h4 class="speaker__person__name">Андрей Яворский</h4>
+                  <p class="speaker__person__desc">разработчик комплексных back-end решений</p>
+                </div>
               </article>
             </div>
           </div>
 
-          <button class="speakers__show-all-btn">Показать всех</button>
+          <button class="speakers__show-all-btn buy-ticket-btn">
+            <span class="btn-text">Показать всех</span>
+          </button>
 
         </section>
       </div>
@@ -390,56 +427,56 @@
           <div class="cf"></div>
 
           <!-- @todo: consider to use h3-->
-          <nav class="program-section__tabs section-tabs" role="tablist">
-            <a role="tab" aria-controls="" class="program-section__tab section-tab" href="#">
+          <div class="program-section__tabs section-tabs" role="tablist">
+            <a role="tab" class="program-section__tab section-tab" href="#">
               <div class="tab-block">
                 <span class="program-section__date">12.04 - 18.04</span>
                 <span class="program-section__day-name text">вся программа</span>
               </div>
             </a>
-            <a role="tab" aria-controls="" class="program-section__tab section-tab" href="#">
+            <a role="tab" class="program-section__tab section-tab" href="#">
               <div class="tab-block">
                 <span class="program-section__date">12.04 / ВС</span>
                 <span class="program-section__day-name text">opening</span>
               </div>
             </a>
-            <a role="tab" aria-controls="" class="program-section__tab section-tab" href="#">
+            <a role="tab" class="program-section__tab section-tab" href="#">
               <div class="tab-block">
                 <span class="program-section__date">13.04 / ПН</span>
                 <span class="program-section__day-name text">front-end day</span>
               </div>
             </a>
-            <a role="tab" aria-controls="" class="program-section__tab section-tab" href="#">
+            <a role="tab" class="program-section__tab section-tab" href="#">
               <div class="tab-block">
                 <span class="program-section__date">14.04 / ВТ</span>
                 <span class="program-section__day-name text">back-end day</span>
               </div>
             </a>
-            <a role="tab" aria-controls="" class="program-section__tab section-tab" href="#">
+            <a role="tab" class="program-section__tab section-tab" href="#">
               <div class="tab-block">
                 <span class="program-section__date">15.04 / СР</span>
                 <span class="program-section__day-name text">qa day</span>
               </div>
             </a>
-            <a role="tab" aria-controls="" class="program-section__tab section-tab active" href="#">
+            <a role="tab" class="program-section__tab section-tab active" href="#">
               <div class="tab-block">
                 <span class="program-section__date">16.04 / ЧТ</span>
                 <span class="program-section__day-name text">web-design day</span>
               </div>
             </a>
-            <a role="tab" aria-controls="" class="program-section__tab section-tab" href="#">
+            <a role="tab" class="program-section__tab section-tab" href="#">
               <div class="tab-block">
                 <span class="program-section__date">17.04 / ПТ</span>
                 <span class="program-section__day-name text">soft skills</span>
               </div>
             </a>
-            <a role="tab" aria-controls="" class="program-section__tab section-tab" href="#">
+            <a role="tab" class="program-section__tab section-tab" href="#">
               <div class="tab-block">
                 <span class="program-section__date">18.04 / СБ</span>
                 <span class="program-section__day-name text">afterparty</span>
               </div>
             </a>
-          </nav>
+          </div>
 
           <!-- begin: program-section__content-container -->
           <div class="program-section__content-container section-tab-container">
@@ -561,6 +598,10 @@
 
       <!-- begin: pricing-section -->
       <div id="pricing-section" class="section">
+        <div class="pricing-section__background">
+          <div class="light"></div>
+          <div class="premium"></div>
+        </div>
         <h2 class="hidden">Pricing</h2>
 
         <article>
@@ -575,12 +616,14 @@
                 <li class="pricing__item__list__item custom-list__item">запись выступлений Ваших дней</li>
               </ul>
             </div>
-            <span class="pricing__item__price">
-              <span class="number">450</span> грн <span class="color-text">/ с 01.03 - <span class="number">550</span> грн</span>
-            </span>
-            <button class="buy-ticket-btn pricing__item__buy-btn">
-              <span class="btn-text">купить билет</span>
-            </button>
+            <div class="pricing__item__bottom">
+              <span class="pricing__item__price">
+                <span class="number">450</span> грн <span class="color-text">/ с 01.03 - <span class="number">550</span> грн</span>
+              </span>
+              <button class="buy-ticket-btn pricing__item__buy-btn">
+                <span class="btn-text">купить билет</span>
+              </button>
+            </div>
           </div>
         </article>
         <article>
@@ -596,12 +639,14 @@
                 <li class="pricing__item__list__item custom-list__item">возможность выиграть призы и сувениры </li>
               </ul>
             </div>
-            <span class="pricing__item__price">
-              <span class="number">650</span> грн <span class="color-text">/ с 01.03 - <span class="number">750</span> грн</span>
-            </span>
-            <button class="buy-ticket-btn pricing__item__buy-btn">
-              <span class="btn-text">купить билет</span>
-            </button>
+            <div class="pricing__item__bottom">
+              <span class="pricing__item__price">
+                <span class="number">650</span> грн <span class="color-text">/ с 01.03 - <span class="number">750</span> грн</span>
+              </span>
+              <button class="buy-ticket-btn pricing__item__buy-btn">
+                <span class="btn-text">купить билет</span>
+              </button>
+            </div>
           </div>
         </article>
         <article>
@@ -618,18 +663,176 @@
                 <li class="pricing__item__list__item custom-list__item">возможность выиграть призы и сувениры</li>
               </ul>
             </div>
-            <span class="pricing__item__price">
-              <span class="number">1200</span> грн <span class="color-text">/ с 01.03 - <span class="number">1300</span> грн</span>
-            </span>
-            <button class="buy-ticket-btn pricing__item__buy-btn">
-              <span class="btn-text">купить билет</span>
-            </button>
+            <div class="pricing__item__bottom">
+              <span class="pricing__item__price">
+                <span class="number">1200</span> грн <span class="color-text">/ с 01.03 - <span class="number">1300</span> грн</span>
+              </span>
+              <button class="buy-ticket-btn pricing__item__buy-btn">
+                <span class="btn-text">купить билет</span>
+              </button>
+            </div>
           </div>
         </article>
       </div>
       <!-- end: pricing-section -->
 
+      <!-- begin: video-section -->
+      <div id="video-section" class="section">
+        <section>
+          <h2 class="video-section__title section-title">видео</h2>
+
+          <div class="cf"></div>
+          <div class="videos-container">
+            <div class="video__item">
+              <video poster="images/video-person-poster.jpg">
+                <source src="#" type="video/mp4">
+                <source src="#" type="video/ogg">
+                Ваш браузер не поддерживает HTML5 видео
+              </video>
+              <span class="video__item__title">jean-baptiste guerrax</span>
+            </div>
+            <div class="video__item">
+              <video poster="images/video-person-poster.jpg">
+                <source src="#" type="video/mp4">
+                <source src="#" type="video/ogg">
+                Ваш браузер не поддерживает HTML5 видео
+              </video>
+              <span class="video__item__title">jean-baptiste guerrax</span>
+            </div>
+            <div class="video__item">
+              <video poster="images/video-person-poster.jpg">
+                <source src="#" type="video/mp4">
+                <source src="#" type="video/ogg">
+                Ваш браузер не поддерживает HTML5 видео
+              </video>
+              <span class="video__item__title">jean-baptiste guerrax</span>
+            </div>
+            <div class="video__item last">
+              <video poster="images/video-person-poster.jpg">
+                <source src="#" type="video/mp4">
+                <source src="#" type="video/ogg">
+                Ваш браузер не поддерживает HTML5 видео
+              </video>
+              <span class="video__item__title">jean-baptiste guerrax</span>
+            </div>
+            <div class="video__item">
+              <video poster="images/video-person-poster.jpg">
+                <source src="#" type="video/mp4">
+                <source src="#" type="video/ogg">
+                Ваш браузер не поддерживает HTML5 видео
+              </video>
+              <span class="video__item__title">jean-baptiste guerrax</span>
+            </div>
+            <div class="video__item">
+              <video poster="images/video-person-poster.jpg">
+                <source src="#" type="video/mp4">
+                <source src="#" type="video/ogg">
+                Ваш браузер не поддерживает HTML5 видео
+              </video>
+              <span class="video__item__title">jean-baptiste guerrax</span>
+            </div>
+            <div class="video__item">
+              <video poster="images/video-person-poster.jpg">
+                <source src="#" type="video/mp4">
+                <source src="#" type="video/ogg">
+                Ваш браузер не поддерживает HTML5 видео
+              </video>
+              <span class="video__item__title">jean-baptiste guerrax</span>
+            </div>
+            <div class="video__item last">
+              <video poster="images/video-person-poster.jpg">
+                <source src="#" type="video/mp4">
+                <source src="#" type="video/ogg">
+                Ваш браузер не поддерживает HTML5 видео
+              </video>
+              <span class="video__item__title">jean-baptiste guerrax</span>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- end: video-section -->
+
+      <!-- begin: partners-section -->
+      <div id="partners-section" class="section section--gray">
+        <section>
+          <h2 class="partners-section__title section-title">партнеры</h2>
+
+          <div class="partners-section__tabs section-tabs" role="tablist">
+            <a class="partners-section__tab section-tab active" role="tab" href="#partners" data-filter="all">
+              <div class="tab-block">
+                <span class="text">партнеры</span>
+              </div>
+            </a>
+            <a class="partners-section__tab section-tab" role="tab" href="#info-partners" data-filter="info-partner">
+              <div class="tab-block">
+                <span class="text">инфо-партнеры</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="cf"></div>
+
+          <div id="partners-section__tab-content">
+            <a href="#" class="partners-section__item partners-section__item--general">
+              <img class="partners-section__item__logo" src="images/kickstarter-logo.png" alt=""/>
+            </a>
+            <a href="#" class="partners-section__item" data-filter="info-partner">
+              <img class="partners-section__item__logo" src="images/wargaming-logo.png" alt=""/>
+            </a>
+            <a href="#" class="partners-section__item" data-filter="info-partner">
+              <img class="partners-section__item__logo" src="images/ciklum-logo.png" alt=""/>
+            </a>
+            <a href="#" class="partners-section__item" data-filter="info-partner">
+              <img class="partners-section__item__logo" src="images/sdl-logo.png" alt=""/>
+            </a>
+            <a href="#" class="partners-section__item" data-filter="info-partner">
+              <img class="partners-section__item__logo" src="images/globallogic-logo.png" alt=""/>
+            </a>
+            <a href="#" class="partners-section__item" data-filter="info-partner">
+              <img class="partners-section__item__logo" src="images/sysiq-logo.png" alt=""/>
+            </a>
+            <a href="#" class="partners-section__item">
+              <img class="partners-section__item__logo" src="images/krusche-and-company-logo.png" alt=""/>
+            </a>
+            <a href="#" class="partners-section__item">
+              <img class="partners-section__item__logo" src="images/wargaming-logo.png" alt=""/>
+            </a>
+            <a href="#" class="partners-section__item">
+              <img class="partners-section__item__logo" src="images/ciklum-logo.png" alt=""/>
+            </a>
+            <a href="#" class="partners-section__item">
+              <img class="partners-section__item__logo" src="images/krusche-and-company-logo.png" alt=""/>
+            </a>
+          </div>
+
+
+        </section>
+      </div>
+      <!-- end: partners-section -->
+
+      <div class="footer section">
+        <footer>
+          <div class="footer__organizer">
+            <span class="text">Организатор</span>
+            <a class="organizer-link" href="#">
+              <img src="images/uwc-logo.png" alt=""/>
+            </a>
+            <span class="text">&copy; 2015</span>
+          </div>
+          <div class="social-links">
+            <a class="social-link social-link--facebook" href="#"></a>
+            <a class="social-link social-link--vk" href="#"></a>
+            <a class="social-link social-link--twitter" href="#"></a>
+          </div>
+
+          <div class="contact-address">
+            Мы на связи: <a class="contact-link" href="mailto:box@uwcua.com">box@uwcua.com</a>
+          </div>
+        </footer>
+      </div>
+
     </div>
+
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->

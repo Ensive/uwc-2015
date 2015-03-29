@@ -1,0 +1,69 @@
+@media only screen and (max-width: 640px)
+  .section
+    min-height: 100% !important
+    max-height: 100% !important
+    height: auto !important
+  // ==
+  #who-section .who-section__tabs-bg
+    width: 60%
+    @include transform(skewX(0deg))
+
+  // ==
+  #speakers-section .speaker__person
+    height: auto
+
+  #speakers-section .speaker__person,
+  #partners-section .partners-section__item.partners-section__item--general,
+  #partners-section .partners-section__item
+    width: 100%
+    margin: 0 auto 4% !important
+    max-width: 350px
+    float: none
+
+  //==
+  #video-section .video__item,
+  #novelty-section .novelty-section__item,
+  #speakers-section .speakers__tabs .speakers__tab,
+  #program-section .program-section__tab,
+  #program-section .program-section__tabs,
+  #program-section .program-section__content-container,
+  #who-section .who-section__tabs,
+  .section-tabs .section-tab,
+  #who-section .who-section__tabs-bg,
+  #who-section .who-section__tab-content,
+  .footer .footer__organizer, .footer .social-links, .footer .contact-address,
+  #novelty-section .novelty-section__item .novelty-section__item__img
+    width: 100%
+    max-width: 400px
+    margin: 0 auto 5% !important
+    float: none
+    @include cf()
+    &:nth-child(3n)
+      margin: 0 0 2% 0
+    &:nth-child(2n)
+      margin: 0 0 2% 0
+
+  #who-section .who-section__tabs-bg
+    max-height: 600px
+
+  #who-section .who-section__tab-content
+    padding: 0
+
+  #who-section
+    background: $it_black
+
+  .footer
+    padding-top: 15px
+
+  #menu-block-container
+    top: 0
+    right: 0
+
+  .menu
+    padding-right: 140px
+
+  #novelty-section .novelty-section__item .novelty-section__item__img
+    max-width: 100px
+
+  //#pricing-section
+    padding: 0 20px

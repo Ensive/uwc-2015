@@ -1,5 +1,5 @@
 #menu-block-container
-  z-index: 1
+  z-index: 2
   position: absolute
   top: 0
   right: 113px
@@ -16,29 +16,65 @@
     .menu-block__menu-btn
       background-color: #000
 
-.menu-block
-  padding: 10px 16px 0 0
-  background-color: transparent
+  .menu-block
+    padding: 10px 16px 0 0
+    background-color: transparent
 
 // language
 .menu-block__language-select
   position: relative
   float: right
-  margin: 15px 38px 0 0
+  margin: 0 13px 0 0
   font-family: $pf-bold
   font-size: 14px
-  text-decoration: none
-  color: #fff
   text-shadow: 0 0 4.8px rgba(0, 0, 0, 0.1)
-  &::after
-    content: ''
+  &:hover, &.active
+    background-color: rgba(17, 17, 17, 0.8)
+  &.active
+    .current-language::after
+      content: ''
+      top: 18px
+      right: 2px
+      background: url('../images/language-select-arrow-active.png') 0 0 no-repeat
+
+  // list
+  .language-list
+    display: none
+    width: 54px
     position: absolute
-    top: 0
-    right: -21px
+    top: 100%
+    left: 0
+    font-size: 14px
+    font-size: 1.4rem
+    background-color: #111
+    background-color: rgba(17, 17, 17, 0.8)
+
+  // links
+  .current-language,
+  .language-link
     display: block
-    background: url('../images/language-select-arrow.png') 0 0 no-repeat
-    width: 16px
-    height: 12px
+    width: 54px
+    height: 39px
+    padding: 15px 0 0 11px
+    color: #fff
+    text-decoration: none
+
+  // current
+  .current-language
+    &::after
+      content: ''
+      position: absolute
+      top: 15px
+      right: 7px
+      display: block
+      width: 16px
+      height: 12px
+      background: url('../images/language-select-arrow.png') 0 0 no-repeat
+
+  .language-link
+    color: #999
+    &:hover
+      color: #fff
 
 
 // button
@@ -87,3 +123,87 @@
       &::before,
       &::after
         background-color: $it_yellow
+
+//menu
+// menu wrapper
+#menu-wrapper
+  z-index: 3
+  position: absolute
+  top: 0
+  right: 0
+  display: none
+  width: 571px
+  height: 768px
+  margin: 0 -100px 0 0
+  @include visibility-hidden()
+.menu
+  z-index: 3
+  position: fixed
+
+  width: inherit
+  height: inherit
+  padding: 0 228px 0 0
+
+  text-align: right
+  background-color: $it_black
+  @include transform(skewX(-14.4deg))
+
+  //-webkit-transition: -webkit-transform .5s ease-in, opacity .5s ease-in
+  //-moz-transition: -moz-transform .5s ease-in, opacity .5s ease-in
+  //-ms-transition: -ms-transform .5s ease-in, opacity .5s ease-in
+  //-o-transition: -o-transform .5s ease-in, opacity .5s ease-in
+  //transition: transform .5s ease-in, opacity .5s ease-in
+
+  //@include visibility-hidden()
+  //-webkit-transform: skewX(-14.4deg) translate(100%, 0)
+  //-moz-transform: skewX(-14.4deg) translate(100%, 0)
+  //-ms-transform: skewX(-14.4deg) translate(100%, 0)
+  //-o-transform: skewX(-14.4deg) translate(100%, 0)
+  //transform: skewX(-14.4deg) translate(100%, 0)
+  //&.show-up
+    opacity: 1
+    display: block
+    @include transform(skewX(-14.4deg))
+
+  .menu__list
+    display: block
+    position: static
+    max-width: 300px
+    float: right
+    @include transform(skewX(14.4deg))
+    .menu-close-btn
+      content: ''
+      display: block
+      position: absolute
+      top: 23px
+      right: 0
+      width: 15px
+      height: 15px
+      border: 0
+      padding: 0
+      background: url('../images/close-menu-icon.png') 0 0 no-repeat
+      @include transition(background)
+      &:hover
+        cursor: pointer
+        background: url('../images/close-menu-icon-hover.png') 0 0 no-repeat
+
+  .menu__item
+    display: block
+    font-family: $pf-bold
+    font-size: 36px
+    font-size: 3.6rem
+    margin: 0 0 35px 0
+    color: #fff
+    text-decoration: none
+    -webkit-transition: color .2s ease
+    -moz-transition: color .2s ease
+    -ms-transition: color .2s ease
+    -o-transition: color .2s ease
+    transition: color .2s ease
+
+    &:first-child,
+    &.first
+      margin-top: 145px
+    &.active, &:hover
+      color: #F8DE2E
+

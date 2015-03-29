@@ -1,0 +1,52 @@
+#video-section
+  //max-height: 768px
+  height: 768px
+  background-color: #191919
+  .video-section__title
+    color: #fff
+    margin: 67px 0 74px 0
+  .video__item
+    position: relative
+    width: 22.192982456%
+    float: left
+    margin: 0 3.742690058% 33px 0
+    &.last,
+    &:nth-child(4n)
+      margin: 0
+    &::before
+      position: absolute
+      top: 38%
+      left: 50%
+      content: ''
+      display: block
+      margin: -36.5px 0 0 -36.5px
+      width: 73px
+      height: 73px
+      background: url('../images/play-video-icon.png') 0 0 no-repeat
+      overflow: hidden
+      @include transition(background)
+      @include rounded(100%)
+    &:hover
+      cursor: pointer
+      &::before
+        background: #191919 url('../images/play-video-icon-hover.png') 0 0 no-repeat
+
+    video
+      width: 100%
+
+    .video__item__title
+      display: block
+      width: 100%
+      height: 44px
+      padding: 0 9px
+      font-family: $pf-bold
+      font-size: 13px
+      font-size: 1.3rem
+      line-height: 44px
+      text-transform: uppercase
+      background-color: #fff
+      color: #000
+      -ms-text-overflow: ellipsis
+      text-overflow: ellipsis
+      white-space: nowrap
+      overflow: hidden

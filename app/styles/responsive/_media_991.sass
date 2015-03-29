@@ -1,9 +1,105 @@
 @media only screen and (max-width: 991px)
-  .section
-    padding: 0 40px
+  html
+    font-size: 58%
 
-  #menu-block-container
-    right: 40px
+  // general section
+  .section
+    padding: 0 50px
+  //.section-title
+    margin: 40px 0 !important
+
+  // tabs
+  .section-tabs .section-tab
+    width: 165px
+
+  // section navigation
+  .section-navigation .section-navigation__bullet
+    width: 17px
+    height: 17px
+    margin: 0 0 20px 0
 
   // menu block
   #menu-block-container
+    right: 40px
+
+  // novelty section
+  #novelty-section
+    padding-bottom: 50px
+    .novelty-section__item
+      padding: 0 30px 0 0 !important
+      .novelty-section__item__title,
+      .novelty-section__item__text
+        font-size: 1.65rem
+
+  // speakers section
+  #speakers-section
+    padding-bottom: 40px
+    .speaker__person
+      width: 22%
+      height: 280px
+      padding-bottom: 10px
+      margin: 0 4% 2% 0
+      overflow: hidden
+      &:nth-child(6n)
+        margin: 0 4% 2% 0
+      &:nth-child(4n)
+        margin: 0
+      .speaker__person__name
+        font-size: 1.6rem
+      .speaker__person__desc
+        font-size: 1.5rem
+        white-space: pre-line
+        -ms-text-overflow: ellipsis
+        text-overflow: ellipsis
+        overflow: hidden
+
+  // pricing section
+  #pricing-section .pricing__item__container
+    height: auto
+    padding-bottom: 10px
+  .pricing__item
+    position: relative
+    .pricing__item__bottom
+      position: absolute
+      bottom: 5%
+      left: 50%
+      margin: 0 0 0 -40.3658536585%
+      text-align: center
+      padding: 0 6%
+
+  // video-section
+  #video-section
+    .video__item
+      width: 30%
+      margin: 0 5% 3% 0
+      &:nth-child(4n)
+        margin: 0 5% 0 0
+      &:nth-child(3n)
+        margin: 0
+
+  // partners-section
+  #partners-section
+    height: auto
+    padding-bottom: 40px
+    .partners-section__item
+      display: block
+      float: left
+      width: 23%
+      margin: 0 2% 2% 0
+      &.partners-section__item--general
+        width: 23%
+        margin: 0 2% 2% 0
+      &:nth-child(5n)
+        margin: 0 2% 2% 0
+
+      //&:nth-child(4n)
+        margin: 0 0 2% 0
+
+  // program section
+  #program-section
+    .program-section__tab
+      width: 150px
+
+
+
+

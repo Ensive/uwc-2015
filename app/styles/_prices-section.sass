@@ -1,10 +1,30 @@
 #pricing-section
-  //max-height: 768px
+  position: relative
+  //padding: 0 98px
+  padding: 0 78px
+  .pricing-section__background
+    z-index: 0
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    .light,
+    .premium
+      float: left
+      width: 50%
+      height: 100%
+    .light
+      background-color: $it_gray
+    .premium
+      background-color: #191919
   .pricing__item__container
     height: 310px
   .pricing__item
+    z-index: 1
+    position: relative
     display: block
-    width: 33%
+    //width: 33%
     height: 768px
     float: left
     padding: 92px 15px 0
@@ -56,13 +76,16 @@
         font-size: 2.4rem
 
     &.light
+      width: 30.512820512%
       background-color: $it_gray
+      padding-right: 40px
       .custom-list__item
         &::before
           color: $it_black
       .color-text
         color: #888
     &.gold
+      width: 38.888888888%
       background-color: #F8DE2E
       .custom-list__item
         &::before
@@ -75,6 +98,8 @@
         width: 45px
         height: 45px
     &.premium
+      width: 30.598290598%
+      padding-left: 40px
       background-color: #191919
       .pricing__item__list
         color: $it_gray

@@ -24,11 +24,8 @@
       height: 57px
       //margin: 0 29px 0 0
       margin: 0 3.174603174% 0 0
-      padding: 0 0 0 10px
       font-family: $pf-bold
       font-size: 14px
-      //font-size: 0.875em
-      //font-size: 0.875rem
       font-size: 1.4rem
       line-height: 62px
       text-transform: uppercase
@@ -37,10 +34,16 @@
       border-bottom: 5px solid #242424
       // @todo: refactor
       overflow: hidden
-      &.active
+      -webkit-transition: padding .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease
+      -moz-transition: padding .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease
+      -ms-transition: padding .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease
+      -o-transition: padding .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease
+      transition: padding .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease
+      &.active, &:hover
         color: #191919
         background-color: #fff
-        border: 0
+        border-color: #fff
+        padding: 0 0 0 10px
       &.last,
       &:last-child
         margin: 0 0 0 0
@@ -49,6 +52,7 @@
     float: left
     font-family: $pf-bold
     font-size: 14px
+    font-size: 1.4rem
     text-transform: uppercase
     color: #4A4949
     width: 41.212121212%
@@ -62,43 +66,70 @@
       border: 4px solid #242424
       //background: none
       background: url('../images/arrow-left.png') center center no-repeat
+      overflow: hidden
       &.speakers__nav__arrow--right
         float: right
         background: url('../images/arrow-right.png') center center no-repeat
       &:hover
         cursor: pointer
+        background: #fff url('../images/arrow-left-hover.png') center center no-repeat
+        border-color: #fff
+        &.speakers__nav__arrow--right
+          background: #fff url('../images/arrow-right-hover.png') center center no-repeat
 
   // speaker items
   .speakers__grid
     margin: 0 0 60px 0
   .speaker__person
+    position: relative
     display: block
     float: left
-    //width: 165px
     width: 14.47368421%
     height: 273px
     padding: 0
     margin: 0 2.631578947% 0 0
     background-color: #FFF
-    //margin: 0 29px 0 0
+    overflow: hidden
     &:nth-child(6n)
       margin: 0
 
+    .speaker__person__info
+      //position: absolute
+      //top: 60%
+      //left: auto
+      background-color: #fff
+      padding: 11px 7px 0
+      //margin: 0 0 -40px 0
+      -webkit-transition: -webkit-transform .3s linear
+      -moz-transition: -moz-transform .3s linear
+      -ms-transition: -ms-transform .3s linear
+      -o-transition: -o-transform .3s linear
+      transition: transform .3s linear
+      overflow: hidden
+      &:hover
+        cursor: pointer
     .speaker__person__photo
       width: 100%
 
     .speaker__person__name
       font-family: $pf-bold
-      margin: 11px 7px 6px 9px
+      //margin: 0 7px 6px 9px
+      margin: 0 0 6px 0
       font-size: 14px
+      font-size: 1.4rem
       text-transform: uppercase
       color: #000
     .speaker__person__desc
       font-family: $pf-thin
-      margin: 0 9px
+      //margin: 0 9px
+      margin: 0
       font-size: 13px
+      font-size: 1.3rem
       line-height: 14px
       color: #555
+
+    //&:hover .speaker__person__info
+      @include transform(translateY(-40%))
 
   // show all button
   .speakers__show-all-btn
@@ -111,6 +142,17 @@
     color: #FFF
     font-family: $pf-bold
     font-size: 12px
+    font-size: 1.2rem
     text-transform: uppercase
+    -webkit-transition: border-color .2s ease
+    -moz-transition: border-color .2s ease
+    -ms-transition: border-color .2s ease
+    -o-transition: border-color .2s ease
+    transition: border-color .2s ease
     &:hover
       cursor: pointer
+      border-color: #fff
+      .btn-text
+        color: $it_black
+    &::before
+      background-color: #fff
